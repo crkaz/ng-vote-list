@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
       };
       this.ideas.push(idea);
     }
+    this.sortIdeasDescendingVotes();
   }
 
   vote(idea, upOrDown): void {
@@ -33,5 +34,10 @@ export class AppComponent implements OnInit {
     } else {
       idea.votes -= 1;
     }
+    this.sortIdeasDescendingVotes();
+  }
+
+  sortIdeasDescendingVotes() {
+    this.ideas.sort((a, b) => (a.votes < b.votes ? 1 : -1));
   }
 }
