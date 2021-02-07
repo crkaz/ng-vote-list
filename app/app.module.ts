@@ -13,7 +13,8 @@ import {
   MdRadioModule,
   MatListModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatTooltipModule
 } from "@angular/material";
 
 import { AppComponent } from "./app.component";
@@ -33,7 +34,8 @@ import { AppComponent } from "./app.component";
     MdRadioModule,
     MatListModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatTooltipModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
