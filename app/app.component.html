@@ -19,13 +19,14 @@
 				</div>
 				<div class="col-2 vote-control">
 					<!-- voting -->
-					<button md-icon-button (click)="idea.votes = idea.votes + 1">
+					<button md-icon-button (click)="idea.votes = idea.votes + 1" mdTooltip="Vote this idea UP."
+          matTooltipPosition="before">
 						<md-icon>arrow_drop_up</md-icon>
 					</button>
 					<div>
 						{{idea.votes}}
 					</div>
-					<button md-icon-button (click)="idea.votes = idea.votes - 1">
+					<button md-icon-button (click)="idea.votes = idea.votes - 1" mdTooltip="Vote this idea DOWN." matTooltipPosition="before">
 						<md-icon>arrow_drop_down</md-icon>
 					</button>
 				</div>
