@@ -21,3 +21,12 @@ p {
 button:focus {
   outline: none;
 }
+
+.idea-card:hover {
+  cursor: pointer;
+  background-color: lightblue;
+}
+
+.idea-card__selected {
+  background-color: lightblue;
+}

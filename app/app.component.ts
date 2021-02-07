@@ -13,15 +13,18 @@ const DATE = new Date().toLocaleDateString();
 })
 export class AppComponent implements OnInit {
   ideas: any[] = [];
+  selectedIdea: any = null;
 
   ngOnInit(): void {
     for (let i = 0; i < N_IDEAS; i += 1) {
       let idea = {
+        id: i,
         title: "Idea " + i,
         description: LOREM_DESC,
         author: AUTHOR,
         date: DATE,
-        votes: 0
+        votes: 0,
+        selected: false
       };
       this.ideas.push(idea);
     }
@@ -37,7 +40,13 @@ export class AppComponent implements OnInit {
     this.sortIdeasDescendingVotes();
   }
 
-  sortIdeasDescendingVotes() {
+  sortIdeasDescendingVotes(): void {
     this.ideas.sort((a, b) => (a.votes < b.votes ? 1 : -1));
+  }
+
+  selectIdea(idea: any): void {
+    this.selectedIdea ? (this.selectIdea.selected = false) : null;
+    this.selectIdea = idea;
+    this.selectIdea.selected = true;
   }
 }
