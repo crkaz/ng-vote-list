@@ -26,4 +26,12 @@ export class AppComponent implements OnInit {
       this.ideas.push(idea);
     }
   }
+
+  vote(idea, upOrDown): void {
+    if (upOrDown === "up") {
+      idea.votes += 1;
+    } else {
+      idea.votes -= 1;
+    }
+  }
 }
