@@ -1,35 +1,47 @@
 <md-toolbar color="primary">
-	<span>Angular Material Vote-List</span>
+  <span>Angular Material Vote-List</span>
 </md-toolbar>
 
 <md-list *ngFor="let idea of ideas" (click)="selectIdea(idea)">
-	<md-card class="idea-card" [class.idea-card__selected]="idea.selected">
-		<md-card-title>{{idea.title}}</md-card-title>
-		<md-card-subtitle>
-			By {{idea.author}} on {{idea.date}}
-		</md-card-subtitle>
-		<md-card-content>
-			<div class=" row">
-				<div class="col-11 clip-wrap">
-					<div class="row">
-						<span class="col-10 clip-wrap">
-						{{idea.description}}
-					</span>
-					</div>
-				</div>
-				<div class="col-2 vote-control">
-					<button md-icon-button (click)="vote(idea, 'up')" mdTooltip="Vote this idea UP."
-          matTooltipPosition="before">
-						<md-icon>arrow_drop_up</md-icon>
-					</button>
-					<div mdTooltip="Net votes for this idea." matTooltipPosition="before">
-						{{idea.votes}}
-					</div>
-					<button md-icon-button (click)="vote(idea, 'down')" mdTooltip="Vote this idea DOWN." matTooltipPosition="before">
-						<md-icon>arrow_drop_down</md-icon>
-					</button>
-				</div>
-			</div>
-		</md-card-content>
-	</md-card>
+  <md-card
+    class="idea-card"
+    [class.idea-card__selected]="selectedIdea === idea"
+  >
+    <md-card-title>{{idea.title}}</md-card-title>
+    <md-card-subtitle>
+      By {{idea.author}} on {{idea.date}}
+    </md-card-subtitle>
+    <md-card-content>
+      <div class=" row">
+        <div class="col-11 clip-wrap">
+          <div class="row">
+            <span class="col-10 clip-wrap">
+              {{idea.description}}
+            </span>
+          </div>
+        </div>
+        <div class="col-2 vote-control">
+          <button
+            md-icon-button
+            (click)="vote(idea, 'up')"
+            mdTooltip="Vote this idea UP."
+            matTooltipPosition="before"
+          >
+            <md-icon>arrow_drop_up</md-icon>
+          </button>
+          <div mdTooltip="Net votes for this idea." matTooltipPosition="before">
+            {{idea.votes}}
+          </div>
+          <button
+            md-icon-button
+            (click)="vote(idea, 'down')"
+            mdTooltip="Vote this idea DOWN."
+            matTooltipPosition="before"
+          >
+            <md-icon>arrow_drop_down</md-icon>
+          </button>
+        </div>
+      </div>
+    </md-card-content>
+  </md-card>
 </md-list>

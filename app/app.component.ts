@@ -45,8 +45,8 @@ export class AppComponent implements OnInit {
   }
 
   selectIdea(idea: any): void {
-    this.selectedIdea ? (this.selectIdea.selected = false) : null;
-    this.selectIdea = idea;
-    this.selectIdea.selected = true;
+    this.selectedIdea === idea
+      ? (this.selectedIdea = null)
+      : (this.selectedIdea = idea);
   }
 }
